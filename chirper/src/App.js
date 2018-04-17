@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import List from "./List";
+import Form from "./Form";
 
 export default class App extends Component {
   constructor(props) {
@@ -15,30 +16,27 @@ export default class App extends Component {
     }
   }
 
-  handleInputChange(value) {
-    this.setState({
-      inputValue: value
-    })
-  }
-
-  handlePostAddition() {
+  handlePostAddition(value) {
     let newArr = [...this.state.chirps];
     newArr.push({
-      value: this.state.inputValue, 
+      value: value,
       id: newArr.length // +1 doesn't make a difference here
     });
     this.setState({
-      chirps: newArr
+      chirps: newArr,
+      inputValue: value
     });
   }
 
   render() {
     return (
       <React.Fragment>
-        <input placeholder="Write something" onChange={ (event) => this.handleInputChange(event.target.value) }/>
-        <button onClick={ (event) => this.handlePostAddition()}> Post </button>
-        <List items={this.state.chirps}/>
+        <Form ref="form" handlePost={(value) => this.handlePostAddition(value)} />
+        <List items={this.state.chirps} />
       </React.Fragment>
     );
   }
 }
+
+
+// inputValue={this.state.inputValue} chirps={this.state.chirps}/>
