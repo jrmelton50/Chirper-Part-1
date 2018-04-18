@@ -25,19 +25,15 @@ export default class Form extends Component {
     render() {
         return (
             <form onSubmit={(event) => this.handleSubmit(event)}>
-                <div className="form-group">
-                    <input className="form-control" placeholder="Write something" onChange={(event) => this.handleInputChange(event.target.value)} />
+                <div className="form-group row">
+                    <div className="col-md-2"></div>
+                    <input className="form-control col-md-8 mt-5" placeholder="Write something" onChange={(event) => this.handleInputChange(event.target.value)} />
                 </div>
-                <div className="form-group">
-                    <button type="submit"> Post </button>
+                <div className="form-group row">
+                    <div className="col-md-2"></div>
+                    <button className="btn btn-primary col-md-1" type="submit"> Post </button>
                 </div>
             </form>
-
-
-            // <form action="">
-            //     <input placeholder="Write something" onChange={(event) => this.handleInputChange(event.target.value)} />
-            //     <button onClick={(event) => this.props.handlePost(this.state.message)}> Post </button>
-            // </form>
         );
     }
 }
