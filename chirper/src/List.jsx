@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export default class List extends Component {
     render() {
@@ -18,7 +18,7 @@ export default class List extends Component {
         });
 
         return (
-            <ul className="pl-0 mt-5"> {listItems} </ul >
+            <div className="container pl-0 mt-5"> {listItems} </div>
         );
     }
 }

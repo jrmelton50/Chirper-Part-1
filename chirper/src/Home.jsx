@@ -34,7 +34,5 @@ export default class App extends Component {
                 <List items={this.state.chirps} />
             </React.Fragment>
         );
-
     }
-
 }
